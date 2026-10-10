@@ -1,9 +1,9 @@
 ## フォルダ構成
 ```
-~/this_repogtory
- |-common_project
-    |-recode_controller
-    |-train_controller
-    |-teleope_controller
-    |-rollout_controller
+~/my_repository
+    |-common_project
+        |-recode_controller
+        |-rollout_controller
+        |-teleope_controller
+        |-train_controller
 ```
