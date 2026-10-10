@@ -1,0 +1,56 @@
+train:
+  policy_type: act
+  device: cuda
+  steps: 10000
+  save_freq: 2000
+
+dataset:
+  repo_id: Iwas-6127/my_pick_test_color_at_new_place_20261010_115214
+
+model:
+  base_repo_id: Iwas-6127/act-model-mypick-color-at-new-place
+
+resume:
+  enable: false
+  config_path: null
+
+finetune:
+  finetune:
+  enable: true
+  repo_type: hub
+  pretrained_model_path: Iwas-6127/act-model-mypick-color-20260926_235331
+  local_download_dir: 'C:\Users\iwas6\lerobot_projects\outputs\train\act-model-mypick-color-20260926_235331'
+
+  # ------------------------------------------------------------
+  # LoRA を使って軽量ファインチューニングする場合は、
+  # 以下の設定をコメントインしてください。
+  #
+  # If you want to perform lightweight fine-tuning using LoRA,
+  # uncomment the following settings.
+  # 
+  # ※ ACTPolicy は自動で LoRA を挿入できないため、
+  #    peft_target_modules の指定が必須です。
+  #
+  # ACTPolicy does NOT support automatic LoRA module detection,
+  # so specifying peft_target_modules is required.
+  # ------------------------------------------------------------
+
+  # peft_method_type: lora
+  # peft_r: 8
+
+  # peft_target_modules:
+  #   # Vision backbone（ResNet）
+  #   - "model.backbone.layer3.0.conv1"
+  #   - "model.backbone.layer3.0.conv2"
+  #   - "model.backbone.layer4.0.conv1"
+  #   - "model.backbone.layer4.0.conv2"
+
+  #   # Transformer encoder（LoRA が挿入可能なのは out_proj のみ）
+  #   - "model.encoder.layers.0.self_attn.out_proj"
+  #   - "model.encoder.layers.1.self_attn.out_proj"
+  #   - "model.encoder.layers.2.self_attn.out_proj"
+  #   - "model.encoder.layers.3.self_attn.out_proj"
+
+wandb:
+  enable: true
+  mode: online
