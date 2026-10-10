@@ -1,0 +1,28 @@
+robot:
+  port: COM3
+  id: follower_arm
+  cameras:
+    overview:
+      index_or_path: 0
+      width: 640
+      height: 480
+      fps: 15
+    handcamera:
+      index_or_path: 2
+      width: 640
+      height: 480
+      fps: 15
+
+teleop:
+  port: COM4
+  id: leader_arm
+
+dataset:
+  repo_id: Iwas-6127/my_pick_test_color
+  fps: 15
+
+record:
+  num_episodes: 30
+  episode_time_s: 15
+  reset_time_s: 3
+  task_description: "My pick task for color blocks"

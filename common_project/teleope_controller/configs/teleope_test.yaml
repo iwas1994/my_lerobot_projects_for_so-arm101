@@ -1,0 +1,21 @@
+robot:
+  port: COM3
+  id: follower_arm
+  cameras:
+    overview:
+      index_or_path: 0
+      width: 640
+      height: 480
+      fps: 15
+    handcamera:
+      index_or_path: 2
+      width: 640
+      height: 480
+      fps: 15
+
+teleop:
+  port: COM4
+  id: leader_arm
+
+visualization:
+  enable: false
