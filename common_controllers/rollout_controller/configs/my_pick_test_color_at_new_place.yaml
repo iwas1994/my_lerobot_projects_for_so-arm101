@@ -1,0 +1,28 @@
+strategy:
+  type: base
+
+robot:
+  type: so101_follower
+  port: COM3
+  id: follower_arm
+  cameras:
+    overview:
+      type: opencv
+      index_or_path: 0
+      width: 640
+      height: 480
+      fps: 15
+    handcamera:
+      type: opencv
+      index_or_path: 1
+      width: 640
+      height: 480
+      fps: 15
+
+policy:
+  pretrained_path: Iwas-6127/act-model-mypick-color-at-new-place-20261010_164402
+
+rollout:
+  duration: 120
+  task: "rollout"
+  display_data: false

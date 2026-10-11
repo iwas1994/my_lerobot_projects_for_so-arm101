@@ -1,25 +1,24 @@
 train:
   policy_type: act
   device: cuda
-  steps: 10000
+  steps: 1
   save_freq: 2000
 
 dataset:
   repo_id: Iwas-6127/my_pick_test_color_at_new_place_20261010_115214
 
 model:
-  base_repo_id: Iwas-6127/act-model-mypick-color-at-new-place
+  base_repo_id: Iwas-6127/act-model-script-test
 
 resume:
   enable: false
   config_path: null
 
 finetune:
-  finetune:
-  enable: true
-  repo_type: hub
-  pretrained_model_path: Iwas-6127/act-model-mypick-color-20260926_235331
-  local_download_dir: 'C:\Users\iwas6\lerobot_projects\outputs\train\act-model-mypick-color-20260926_235331'
+  enable: false
+  repo_type: null
+  pretrained_model_path: null
+  local_download_dir: null
 
   # ------------------------------------------------------------
   # LoRA を使って軽量ファインチューニングする場合は、

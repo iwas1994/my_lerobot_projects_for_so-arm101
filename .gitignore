@@ -1,4 +1,5 @@
 *.pyc
+.vscode/
 outputs/
 dataset/
 tmp/
